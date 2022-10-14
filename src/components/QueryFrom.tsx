@@ -1,36 +1,30 @@
 import { useState } from 'react'
+import { useQuery } from './QueryContext';
 
 function QueryFrom() {
-  const [query, setQuery] = useState<string>("");
-  const [queryPlaceholder, setQueryPlaceholder] = useState<string>("Enter tweet url");
+  const { query, setQuery }  = useQuery();
+  const [tempQuery, setTempQuery] = useState<string>("");
+
   function OnChangeInput(e: React.ChangeEvent<HTMLInputElement>){
-    setQueryPlaceholder("Enter tweet url");
-    setQuery(e.target.value);
+    setTempQuery(e.target.value)
   }
 
   function OnSubmit(e: React.SyntheticEvent){
     e.preventDefault();
-
-    if(query === ""){
-      setQueryPlaceholder("Please enter a url!");
-      return false;
-    }
-
-    console.log("Query request recieved.", query);
-    setQuery("");;
+    setQuery(tempQuery);
   }
   
   return (
     <form onSubmit={OnSubmit} className='flex'>
       <div>
-        <input name='query-url' placeholder={queryPlaceholder} onChange={OnChangeInput}
+        <input name='query-url' placeholder={""} onChange={OnChangeInput}
         className='border border-blue-400 mr-2'></input>
       </div>
       <div>
         <button type='submit'
         className='border border-black mr-2'>Find</button>
       </div>
-      <p>{query}</p>
+      <div>{tempQuery}</div>
     </form>
   );
 }

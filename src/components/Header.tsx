@@ -1,8 +1,8 @@
-import React from 'react'
-
 function Header() {
   return (
-    <h1>Twitter Video Downloader</h1>
+    <div>
+      <h1>Twitter Video Downloader</h1>
+    </div>
   );
 }
 
