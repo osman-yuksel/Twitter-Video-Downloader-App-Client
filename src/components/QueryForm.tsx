@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useQuery } from './QueryContext';
 
-function QueryFrom() {
+function QueryForm() {
   const { query, setQuery }  = useQuery();
   const [tempQuery, setTempQuery] = useState<string>("");
 
@@ -29,4 +29,4 @@ function QueryFrom() {
   );
 }
 
-export default QueryFrom;
+export default QueryForm;

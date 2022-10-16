@@ -1,6 +1,7 @@
 import Header from './components/Header';
-import QueryFrom from './components/QueryFrom';
+import QueryForm from './components/QueryForm';
 import { QueryProvider } from './components/QueryContext';
+import MediaData from './components/MediaData';
 
 const api = {
   host: import.meta.env.VITE_API_HOST,
@@ -12,7 +13,8 @@ function App() {
       <p>{ api.host }</p>
       <Header />
       <QueryProvider>
-        <QueryFrom />
+        <QueryForm />
+        <MediaData />
       </QueryProvider>
     </div>
   );

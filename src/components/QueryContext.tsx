@@ -8,11 +8,8 @@ interface queryInterface {
 const QueryContext = createContext<queryInterface>({} as queryInterface);
 
 export const QueryProvider = ({ children }: { children: ReactNode }) => {
-  const [query, setQuery] = useState<string>("empty");
+  const [query, setQuery] = useState<string>("");
   const values = { query, setQuery };
-  useEffect(() => {
-    console.log("Query changed: ", query);
-  }, [query]);
   return (<QueryContext.Provider value={values}>{children}</QueryContext.Provider>);
 }
 
