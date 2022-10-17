@@ -5,7 +5,18 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "primary" : "#090F15",
+        "text-input" : "#373737",
+      },
+      backgroundImage: {
+        "searchimage": "url('src/assets/icons8-search.svg')"
+      },
+      fontFamily: {
+        "inter" : "inter"
+      }
+    },
   },
   plugins: [],
 }

@@ -9,8 +9,7 @@ const api = {
 
 function App() {
   return (
-    <div className="App">
-      <p>{ api.host }</p>
+    <div className="App bg-primary flex flex-col items-center transition-all">
       <Header />
       <QueryProvider>
         <QueryForm />

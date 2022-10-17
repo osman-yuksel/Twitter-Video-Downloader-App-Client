@@ -1,8 +1,8 @@
 export async function GetMediaData(tweetUrl: string) {
   const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
-  if(false){
+  if(true){
     await sleep(1000);
-    return fake();
+    return FakeData();
   }
   let controller = new AbortController();
   setTimeout(() => controller.abort(), 5000);
@@ -15,7 +15,8 @@ export async function GetMediaData(tweetUrl: string) {
   return mediaData;  
 }
 
-function fake(){
+//Development only
+function FakeData(){
   return {
     "tweetId":"1581306673003524096",
     "mediaData":
@@ -73,11 +74,11 @@ export function DisplayMediaData(data: any){
       return <li key={key}>Video Object === {obj.media_key} <hr></hr><ul>{obj.variants.map((variant: any, i: any) => {
         if(variant.content_type === "video/mp4")
         return <li key={i}>
-          <video width="320" height="240" controls><source src={variant.url} type="video/mp4"/></video></li>
+          <a className="text-white" href={variant.url} download>Click to download</a></li>
       })}</ul></li>
     }
     if(obj.type === "photo"){
-      return <li key={key}>Photo Object === {obj.media_key}<hr></hr><img src={obj.url}></img></li>
+      return <li key={key}>Photo Object === {obj.media_key}<hr></hr><div>{obj.url}</div></li>
     }
   })
 }

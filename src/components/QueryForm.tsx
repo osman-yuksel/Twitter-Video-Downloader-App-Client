@@ -17,16 +17,16 @@ function QueryForm() {
   return (
     <form onSubmit={OnSubmit} className='flex'>
       <div>
-        <input name='query-url' placeholder={""} onChange={OnChangeInput}
-        className='border border-blue-400 mr-2'></input>
+        <input name='query-url' placeholder={"Enter a tweet link"} onChange={OnChangeInput}
+        className='border-2 rounded-tl-lg rounded-bl-lg mr-1 p-2 w-80 bg-text-input border-text-input hover:border-gray-500 text-white transition-all focus:bg-black !outline-none focus:border-purple-800'></input>
       </div>
       <div>
         <button type='submit'
-        className='border border-black mr-2'>Find</button>
+        className='border-8 rounded-tr-lg rounded-br-lg p-2 h-11 w-12 bg-text-input border-text-input hover:bg-gray-500 hover:border-gray-500 text-white bg-searchimage bg-contain bg-no-repeat bg-center'></button>
       </div>
-      <div>{tempQuery}</div>
     </form>
   );
 }
 
 export default QueryForm;
+

@@ -1,7 +1,7 @@
 function Header() {
   return (
-    <div>
-      <h1>Twitter Video Downloader</h1>
+    <div className="font-bold text-red-100 mb-12 mt-4 font-inter text-2xl">
+      <h1 className="">Twitter Video Downloader</h1>
     </div>
   );
 }
