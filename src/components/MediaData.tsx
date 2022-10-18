@@ -1,8 +1,12 @@
 import { useEffect, useState }from 'react'
 import { useQuery } from './QueryContext';
-import { GetMediaData } from './MediaFunctions';
-import Loading from './Loading';
+import { GetMediaData } from './QueryFunctions';
 import { DisplayMediaData } from './MediaFunctions';
+import Loading from './Loading';
+import ApiError from './ApiError';
+import QueryError from './QueryError';
+import EmptyData from './EmptyData';
+
 
 function MediaData() {
   const { query, setQuery }  = useQuery();
@@ -25,11 +29,10 @@ function MediaData() {
     else setId(id => id+1);
   },[query])
   
-  return loading ? 
-  <Loading />
-  : data ? 
-  <ul>{DisplayMediaData(data)}</ul> 
-  : <div>Empty</div>;
+  return loading ? <Loading /> 
+  : data ? data.tweetId === "url_not_found" || data.tweetId === "invalid_url" ? <QueryError /> : data.tweetId === "api_error" ? <ApiError />
+  : <ul>{ DisplayMediaData(data) }</ul> 
+  : <EmptyData />;
 
 }
 

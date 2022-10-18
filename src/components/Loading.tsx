@@ -2,7 +2,7 @@ import React from 'react'
 
 function Loading() {
   return (
-    <div>Loading...</div>
+    <img src="src/assets/Double Ring-1s-200px.svg"></img>
   )
 }
 
