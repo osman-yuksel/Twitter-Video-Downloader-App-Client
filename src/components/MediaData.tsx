@@ -31,7 +31,7 @@ function MediaData() {
   
   return loading ? <Loading /> 
   : data ? data.tweetId === "url_not_found" || data.tweetId === "invalid_url"  || !data.mediaData ? <QueryError /> : data.tweetId === "api_error" ? <ApiError />
-  : <ul>{ DisplayMediaData(data) }</ul> 
+  : <ul className=''>{ DisplayMediaData(data) }</ul> 
   : <EmptyData />;
 
 }
