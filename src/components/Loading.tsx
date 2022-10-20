@@ -1,9 +1,7 @@
-import React from 'react'
-
 function Loading() {
   return (
-    <img src="src/assets/Double Ring-1s-200px.svg"></img>
-  )
+    <img src="assets/Infinity-1s-200px.svg"></img>
+  );
 }
 
-export default Loading
+export default Loading;

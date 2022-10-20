@@ -1,6 +1,8 @@
 function EmptyData() {
   return (
-    <div>EmptyData</div>
+    <div className="w-64 h-64 mt-10 animate-emptyanimfast">
+      <img className="w-64 h-64 animate-fadeinbottom" src="assets/gesture-finger.png"></img>
+    </div>
   );
 }
 

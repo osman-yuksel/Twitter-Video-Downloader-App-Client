@@ -7,14 +7,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "primary" : "#4020A1",
-        "secondary" : "#24323F",
+        "primary" : "#1d9bf0",
+        "secondary" : "#012238",
         "text-input" : "#373737",
-        "background-color" : "#070F4E"
+        "background-color" : "#111112",
+        "button-background-color" : "#303033",
+        "cardcolor" : "#07090a"
       },
       backgroundImage: {
-        "searchimage": "url('src/assets/icons8-search.svg')",
-        "background-image" : "url('src/assets/background.svg')"
+        "searchimage": "url('icons8-search.svg')"
       },
       fontFamily: {
         "inter" : "inter"
@@ -28,12 +29,27 @@ module.exports = {
           "100%" : {
             "opacity" : "1"
           }
-        }
+        },
+        emptyanim : {
+          '0%' : {
+            transform : "translateY(0)"
+          },
+          '50%' : {
+            transform : "translateY(50%)"
+          },
+        },
       },
       animation : {
-        fadeinbottom : "fadeinbottom .4s ease-in"
+        fadeinbottom : "fadeinbottom .4s ease-in",
+        emptyanim : "emptyanim 3s infinite",
+        emptyanimfast : "emptyanim 2s infinite",
       }
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addVariant }) {
+      addVariant('child', '& > *');
+      addVariant('child-hover', '& > *:hover');
+    }
+  ],
 }

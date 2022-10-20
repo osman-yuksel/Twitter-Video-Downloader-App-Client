@@ -9,7 +9,7 @@ const api = {
 
 function App() {
   return (
-    <div className="App bg-slate-900 flex flex-col items-center transition-all min-h-screen">
+    <div className="App bg-black text-white flex flex-col items-center transition-all min-h-screen font-inter">
       <Header />
       <QueryProvider>
         <QueryForm />

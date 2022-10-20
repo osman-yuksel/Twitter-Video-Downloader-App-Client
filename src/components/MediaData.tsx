@@ -16,12 +16,12 @@ function MediaData() {
   
   useEffect(() => {
     if(id){
-      console.log("Query changed: ",query);
+      //console.log("Query changed: ",query);
       setLoading(true);
       const FetchData = async (query: string) => {
         const fdata = await GetMediaData(query)
         setData(fdata);
-        console.log("Data: ", fdata);
+        //console.log("Data: ", fdata);
       }
   
       FetchData(query).then(() => { setLoading(false), setId(id => id+1) });
@@ -30,7 +30,7 @@ function MediaData() {
   },[query])
   
   return loading ? <Loading /> 
-  : data ? data.tweetId === "url_not_found" || data.tweetId === "invalid_url" ? <QueryError /> : data.tweetId === "api_error" ? <ApiError />
+  : data ? data.tweetId === "url_not_found" || data.tweetId === "invalid_url"  || !data.mediaData ? <QueryError /> : data.tweetId === "api_error" ? <ApiError />
   : <ul>{ DisplayMediaData(data) }</ul> 
   : <EmptyData />;
 
