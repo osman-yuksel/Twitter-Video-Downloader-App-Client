@@ -18,6 +18,9 @@ permissions:
 concurrency:
   group: "pages"
   cancel-in-progress: true
+  
+env:
+  BUILD_PATH: "."
 
 jobs:
   deploy:
@@ -39,7 +42,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: './dist/'
+          path: ${{ env.BUILD_PATH }}/dist
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
