@@ -28,7 +28,7 @@ function QueryForm() {
         <div>
           <button
             type="submit"
-            className="border-8 rounded-tr-lg rounded-br-lg p-2 h-12 w-12 bg-text-input border-text-input hover:bg-gray-500 hover:border-gray-500 text-white bg-searchimage bg-contain bg-no-repeat bg-center"
+            className="border-8 rounded-tr-lg rounded-br-lg p-2 h-12 w-12 bg-text-input border-text-input hover:bg-gray-500 hover:border-gray-500 text-white bg-searchImage bg-contain bg-no-repeat bg-center"
           ></button>
         </div>
       </form>
