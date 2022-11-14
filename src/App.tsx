@@ -1,11 +1,11 @@
-import Header from './components/Header';
-import QueryForm from './components/QueryForm';
-import { QueryProvider } from './components/QueryContext';
-import MediaData from './components/MediaData';
+import Header from "./components/Header";
+import QueryForm from "./components/QueryForm";
+import { QueryProvider } from "./components/QueryContext";
+import MediaData from "./components/MediaData";
 
 const api = {
   host: import.meta.env.VITE_API_HOST,
-}
+};
 
 function App() {
   return (
@@ -20,5 +20,3 @@ function App() {
 }
 
 export default App;
-
-
